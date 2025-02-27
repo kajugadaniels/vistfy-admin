@@ -57,3 +57,27 @@ export const logoutUser = async (refreshToken) => {
         throw error;
     }
 };
+
+// ------------------------------
+// Place APIs
+// ------------------------------
+
+// Get all places with detailed info
+export const getPlaces = async () => {
+    try {
+        const response = await apiClient.get('/base/places/');
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+// Add a new place
+export const addPlace = async (placeData) => {
+    try {
+        const response = await apiClient.post('/base/place/add/', placeData);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
