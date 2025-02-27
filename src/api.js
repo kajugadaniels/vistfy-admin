@@ -156,3 +156,13 @@ export const editCategory = async (categoryId, categoryData) => {
     }
 };
 
+// Delete a category
+export const deleteCategory = async (categoryId) => {
+    try {
+        const response = await apiClient.delete(`/base/category/${categoryId}/delete/`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
