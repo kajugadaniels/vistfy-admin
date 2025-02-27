@@ -135,3 +135,14 @@ export const addCategory = async (categoryData) => {
         throw error;
     }
 };
+
+// Get details of a specific category with its places
+export const categoryDetails = async (categoryId) => {
+    try {
+        const response = await apiClient.get(`/base/category/${categoryId}/`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
