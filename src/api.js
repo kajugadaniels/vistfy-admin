@@ -200,3 +200,13 @@ export const tagDetails = async (tagId) => {
     }
 };
 
+// Edit an existing tag (partial update)
+export const editTag = async (tagId, tagData) => {
+    try {
+        const response = await apiClient.patch(`/base/tag/${tagId}/edit/`, tagData);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
