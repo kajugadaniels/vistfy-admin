@@ -180,3 +180,13 @@ export const getTags = async () => {
     }
 };
 
+// Add a new tag
+export const addTag = async (tagData) => {
+    try {
+        const response = await apiClient.post('/base/tag/add/', tagData);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
