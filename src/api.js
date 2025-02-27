@@ -220,3 +220,17 @@ export const deleteTag = async (tagId) => {
     }
 };
 
+// ------------------------------
+// PlaceImage APIs
+// ------------------------------
+
+// Get all images for a given place
+export const getPlaceImages = async (placeId) => {
+    try {
+        const response = await apiClient.get(`/base/place/${placeId}/images/`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
