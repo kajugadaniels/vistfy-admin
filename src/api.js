@@ -245,3 +245,13 @@ export const addPlaceImage = async (placeId, imageData) => {
         throw error;
     }
 };
+
+// Get details of a specific place image
+export const placeImageDetails = async (imageId) => {
+    try {
+        const response = await apiClient.get(`/base/images/${imageId}/`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
