@@ -166,3 +166,17 @@ export const deleteCategory = async (categoryId) => {
     }
 };
 
+// ------------------------------
+// Tag APIs
+// ------------------------------
+
+// Get all tags with associated places
+export const getTags = async () => {
+    try {
+        const response = await apiClient.get('/base/tags/');
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
