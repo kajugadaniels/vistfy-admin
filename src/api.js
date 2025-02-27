@@ -48,3 +48,12 @@ export const loginUser = async (email, password) => {
     }
 };
 
+// Logout user by sending refresh token
+export const logoutUser = async (refreshToken) => {
+    try {
+        const response = await apiClient.post('/auth/logout/', { refresh: refreshToken });
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
