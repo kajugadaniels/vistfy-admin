@@ -310,3 +310,13 @@ export const placeSocialMediaDetails = async (socialId) => {
     }
 };
 
+// Edit an existing social media record (partial update)
+export const editPlaceSocialMedia = async (socialId, socialData) => {
+    try {
+        const response = await apiClient.patch(`/base/social/${socialId}/edit/`, socialData);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
