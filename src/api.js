@@ -234,3 +234,14 @@ export const getPlaceImages = async (placeId) => {
     }
 };
 
+// Add a new image for a place (multipart/form-data)
+export const addPlaceImage = async (placeId, imageData) => {
+    try {
+        const response = await apiClient.post(`/base/place/${placeId}/images/add/`, imageData, {
+            headers: { 'Content-Type': 'multipart/form-data' },
+        });
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
