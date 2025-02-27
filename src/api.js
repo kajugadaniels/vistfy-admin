@@ -256,3 +256,23 @@ export const placeImageDetails = async (imageId) => {
     }
 };
 
+// Edit an existing place image (partial update)
+export const editPlaceImage = async (imageId, imageData) => {
+    try {
+        const response = await apiClient.patch(`/base/images/${imageId}/edit/`, imageData);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+// Delete a place image
+export const deletePlaceImage = async (imageId) => {
+    try {
+        const response = await apiClient.delete(`/base/images/${imageId}/delete/`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
