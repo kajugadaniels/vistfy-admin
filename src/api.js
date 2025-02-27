@@ -91,3 +91,13 @@ export const placeDetails = async (placeId) => {
         throw error;
     }
 };
+
+// Edit an existing place (partial update)
+export const editPlace = async (placeId, placeData) => {
+    try {
+        const response = await apiClient.patch(`/base/place/${placeId}/edit/`, placeData);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
