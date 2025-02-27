@@ -210,3 +210,13 @@ export const editTag = async (tagId, tagData) => {
     }
 };
 
+// Delete a tag
+export const deleteTag = async (tagId) => {
+    try {
+        const response = await apiClient.delete(`/base/tag/${tagId}/delete/`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
