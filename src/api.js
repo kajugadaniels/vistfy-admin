@@ -111,3 +111,17 @@ export const deletePlace = async (placeId) => {
         throw error;
     }
 };
+
+// ------------------------------
+// Category APIs
+// ------------------------------
+
+// Get all categories with associated places
+export const getCategories = async () => {
+    try {
+        const response = await apiClient.get('/base/categories/');
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
