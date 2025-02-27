@@ -146,3 +146,13 @@ export const categoryDetails = async (categoryId) => {
     }
 };
 
+// Edit an existing category (partial update)
+export const editCategory = async (categoryId, categoryData) => {
+    try {
+        const response = await apiClient.patch(`/base/category/${categoryId}/edit/`, categoryData);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
