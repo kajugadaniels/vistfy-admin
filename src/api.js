@@ -276,3 +276,16 @@ export const deletePlaceImage = async (imageId) => {
     }
 };
 
+// ------------------------------
+// PlaceSocialMedia APIs
+// ------------------------------
+
+// Get all social media records for a given place
+export const getPlaceSocialMedias = async (placeId) => {
+    try {
+        const response = await apiClient.get(`/base/places/${placeId}/social/`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
