@@ -65,7 +65,7 @@ export const logoutUser = async (refreshToken) => {
 // Get all places with detailed info
 export const getPlaces = async () => {
     try {
-        const response = await apiClient.get('/base/places/');
+        const response = await apiClient.get('/admin/places/');
         return response.data;
     } catch (error) {
         throw error;
@@ -75,7 +75,7 @@ export const getPlaces = async () => {
 // Add a new place
 export const addPlace = async (placeData) => {
     try {
-        const response = await apiClient.post('/base/place/add/', placeData);
+        const response = await apiClient.post('/admin/place/add/', placeData);
         return response.data;
     } catch (error) {
         throw error;
@@ -85,7 +85,7 @@ export const addPlace = async (placeData) => {
 // Get details of a specific place
 export const placeDetails = async (placeId) => {
     try {
-        const response = await apiClient.get(`/base/place/${placeId}/`);
+        const response = await apiClient.get(`/admin/place/${placeId}/`);
         return response.data;
     } catch (error) {
         throw error;
@@ -95,7 +95,7 @@ export const placeDetails = async (placeId) => {
 // Edit an existing place (partial update)
 export const editPlace = async (placeId, placeData) => {
     try {
-        const response = await apiClient.patch(`/base/place/${placeId}/edit/`, placeData);
+        const response = await apiClient.patch(`/admin/place/${placeId}/edit/`, placeData);
         return response.data;
     } catch (error) {
         throw error;
@@ -105,7 +105,7 @@ export const editPlace = async (placeId, placeData) => {
 // Delete a place
 export const deletePlace = async (placeId) => {
     try {
-        const response = await apiClient.delete(`/base/place/${placeId}/delete/`);
+        const response = await apiClient.delete(`/admin/place/${placeId}/delete/`);
         return response.data;
     } catch (error) {
         throw error;
@@ -119,7 +119,7 @@ export const deletePlace = async (placeId) => {
 // Get all categories with associated places
 export const getCategories = async () => {
     try {
-        const response = await apiClient.get('/base/categories/');
+        const response = await apiClient.get('/admin/categories/');
         return response.data;
     } catch (error) {
         throw error;
@@ -129,7 +129,7 @@ export const getCategories = async () => {
 // Add a new category
 export const addCategory = async (categoryData) => {
     try {
-        const response = await apiClient.post('/base/category/add/', categoryData);
+        const response = await apiClient.post('/admin/category/add/', categoryData);
         return response.data;
     } catch (error) {
         throw error;
@@ -139,7 +139,7 @@ export const addCategory = async (categoryData) => {
 // Get details of a specific category with its places
 export const categoryDetails = async (categoryId) => {
     try {
-        const response = await apiClient.get(`/base/category/${categoryId}/`);
+        const response = await apiClient.get(`/admin/category/${categoryId}/`);
         return response.data;
     } catch (error) {
         throw error;
@@ -149,7 +149,7 @@ export const categoryDetails = async (categoryId) => {
 // Edit an existing category (partial update)
 export const editCategory = async (categoryId, categoryData) => {
     try {
-        const response = await apiClient.patch(`/base/category/${categoryId}/edit/`, categoryData);
+        const response = await apiClient.patch(`/admin/category/${categoryId}/edit/`, categoryData);
         return response.data;
     } catch (error) {
         throw error;
@@ -159,7 +159,7 @@ export const editCategory = async (categoryId, categoryData) => {
 // Delete a category
 export const deleteCategory = async (categoryId) => {
     try {
-        const response = await apiClient.delete(`/base/category/${categoryId}/delete/`);
+        const response = await apiClient.delete(`/admin/category/${categoryId}/delete/`);
         return response.data;
     } catch (error) {
         throw error;
@@ -173,7 +173,7 @@ export const deleteCategory = async (categoryId) => {
 // Get all tags with associated places
 export const getTags = async () => {
     try {
-        const response = await apiClient.get('/base/tags/');
+        const response = await apiClient.get('/admin/tags/');
         return response.data;
     } catch (error) {
         throw error;
@@ -183,7 +183,7 @@ export const getTags = async () => {
 // Add a new tag
 export const addTag = async (tagData) => {
     try {
-        const response = await apiClient.post('/base/tag/add/', tagData);
+        const response = await apiClient.post('/admin/tag/add/', tagData);
         return response.data;
     } catch (error) {
         throw error;
@@ -193,7 +193,7 @@ export const addTag = async (tagData) => {
 // Get details of a specific tag with its associated places
 export const tagDetails = async (tagId) => {
     try {
-        const response = await apiClient.get(`/base/tag/${tagId}/`);
+        const response = await apiClient.get(`/admin/tag/${tagId}/`);
         return response.data;
     } catch (error) {
         throw error;
@@ -203,7 +203,7 @@ export const tagDetails = async (tagId) => {
 // Edit an existing tag (partial update)
 export const editTag = async (tagId, tagData) => {
     try {
-        const response = await apiClient.patch(`/base/tag/${tagId}/edit/`, tagData);
+        const response = await apiClient.patch(`/admin/tag/${tagId}/edit/`, tagData);
         return response.data;
     } catch (error) {
         throw error;
@@ -213,7 +213,7 @@ export const editTag = async (tagId, tagData) => {
 // Delete a tag
 export const deleteTag = async (tagId) => {
     try {
-        const response = await apiClient.delete(`/base/tag/${tagId}/delete/`);
+        const response = await apiClient.delete(`/admin/tag/${tagId}/delete/`);
         return response.data;
     } catch (error) {
         throw error;
@@ -227,7 +227,7 @@ export const deleteTag = async (tagId) => {
 // Get all images for a given place
 export const getPlaceImages = async (placeId) => {
     try {
-        const response = await apiClient.get(`/base/place/${placeId}/images/`);
+        const response = await apiClient.get(`/admin/place/${placeId}/images/`);
         return response.data;
     } catch (error) {
         throw error;
@@ -237,7 +237,7 @@ export const getPlaceImages = async (placeId) => {
 // Add a new image for a place (multipart/form-data)
 export const addPlaceImage = async (placeId, imageData) => {
     try {
-        const response = await apiClient.post(`/base/place/${placeId}/images/add/`, imageData, {
+        const response = await apiClient.post(`/admin/place/${placeId}/images/add/`, imageData, {
             headers: { 'Content-Type': 'multipart/form-data' },
         });
         return response.data;
@@ -249,7 +249,7 @@ export const addPlaceImage = async (placeId, imageData) => {
 // Get details of a specific place image
 export const placeImageDetails = async (imageId) => {
     try {
-        const response = await apiClient.get(`/base/images/${imageId}/`);
+        const response = await apiClient.get(`/admin/images/${imageId}/`);
         return response.data;
     } catch (error) {
         throw error;
@@ -259,7 +259,7 @@ export const placeImageDetails = async (imageId) => {
 // Edit an existing place image (partial update)
 export const editPlaceImage = async (imageId, imageData) => {
     try {
-        const response = await apiClient.patch(`/base/images/${imageId}/edit/`, imageData);
+        const response = await apiClient.patch(`/admin/images/${imageId}/edit/`, imageData);
         return response.data;
     } catch (error) {
         throw error;
@@ -269,7 +269,7 @@ export const editPlaceImage = async (imageId, imageData) => {
 // Delete a place image
 export const deletePlaceImage = async (imageId) => {
     try {
-        const response = await apiClient.delete(`/base/images/${imageId}/delete/`);
+        const response = await apiClient.delete(`/admin/images/${imageId}/delete/`);
         return response.data;
     } catch (error) {
         throw error;
@@ -283,7 +283,7 @@ export const deletePlaceImage = async (imageId) => {
 // Get all social media records for a given place
 export const getPlaceSocialMedias = async (placeId) => {
     try {
-        const response = await apiClient.get(`/base/places/${placeId}/social/`);
+        const response = await apiClient.get(`/admin/places/${placeId}/social/`);
         return response.data;
     } catch (error) {
         throw error;
@@ -293,7 +293,7 @@ export const getPlaceSocialMedias = async (placeId) => {
 // Add a new social media record for a place
 export const addPlaceSocialMedia = async (placeId, socialData) => {
     try {
-        const response = await apiClient.post(`/base/places/${placeId}/social/add/`, socialData);
+        const response = await apiClient.post(`/admin/places/${placeId}/social/add/`, socialData);
         return response.data;
     } catch (error) {
         throw error;
@@ -303,7 +303,7 @@ export const addPlaceSocialMedia = async (placeId, socialData) => {
 // Get details of a specific social media record
 export const placeSocialMediaDetails = async (socialId) => {
     try {
-        const response = await apiClient.get(`/base/social/${socialId}/`);
+        const response = await apiClient.get(`/admin/social/${socialId}/`);
         return response.data;
     } catch (error) {
         throw error;
@@ -313,10 +313,21 @@ export const placeSocialMediaDetails = async (socialId) => {
 // Edit an existing social media record (partial update)
 export const editPlaceSocialMedia = async (socialId, socialData) => {
     try {
-        const response = await apiClient.patch(`/base/social/${socialId}/edit/`, socialData);
+        const response = await apiClient.patch(`/admin/social/${socialId}/edit/`, socialData);
         return response.data;
     } catch (error) {
         throw error;
     }
 };
 
+// Delete a social media record
+export const deletePlaceSocialMedia = async (socialId) => {
+    try {
+        const response = await apiClient.delete(`/admin/social/${socialId}/delete/`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export default apiClient;
