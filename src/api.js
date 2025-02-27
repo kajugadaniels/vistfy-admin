@@ -289,3 +289,13 @@ export const getPlaceSocialMedias = async (placeId) => {
         throw error;
     }
 };
+
+// Add a new social media record for a place
+export const addPlaceSocialMedia = async (placeId, socialData) => {
+    try {
+        const response = await apiClient.post(`/base/places/${placeId}/social/add/`, socialData);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
