@@ -299,3 +299,14 @@ export const addPlaceSocialMedia = async (placeId, socialData) => {
         throw error;
     }
 };
+
+// Get details of a specific social media record
+export const placeSocialMediaDetails = async (socialId) => {
+    try {
+        const response = await apiClient.get(`/base/social/${socialId}/`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
