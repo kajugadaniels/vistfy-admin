@@ -190,3 +190,13 @@ export const addTag = async (tagData) => {
     }
 };
 
+// Get details of a specific tag with its associated places
+export const tagDetails = async (tagId) => {
+    try {
+        const response = await apiClient.get(`/base/tag/${tagId}/`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
