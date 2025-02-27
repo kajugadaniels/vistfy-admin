@@ -125,3 +125,13 @@ export const getCategories = async () => {
         throw error;
     }
 };
+
+// Add a new category
+export const addCategory = async (categoryData) => {
+    try {
+        const response = await apiClient.post('/base/category/add/', categoryData);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
