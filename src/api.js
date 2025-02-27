@@ -255,3 +255,4 @@ export const placeImageDetails = async (imageId) => {
         throw error;
     }
 };
+
