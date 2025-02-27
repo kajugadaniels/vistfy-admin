@@ -81,3 +81,13 @@ export const addPlace = async (placeData) => {
         throw error;
     }
 };
+
+// Get details of a specific place
+export const placeDetails = async (placeId) => {
+    try {
+        const response = await apiClient.get(`/base/place/${placeId}/`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
