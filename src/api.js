@@ -101,3 +101,13 @@ export const editPlace = async (placeId, placeData) => {
         throw error;
     }
 };
+
+// Delete a place
+export const deletePlace = async (placeId) => {
+    try {
+        const response = await apiClient.delete(`/base/place/${placeId}/delete/`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
